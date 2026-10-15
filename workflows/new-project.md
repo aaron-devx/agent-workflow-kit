@@ -3,7 +3,7 @@
 ## 1. Install kit (once per machine)
 
 ```bash
-git clone https://github.com/YOUR_ORG/agent-workflow-kit.git
+git clone https://github.com/Dukeabaddon/agent-workflow-kit.git
 cd agent-workflow-kit && ./install.sh
 ```
 
