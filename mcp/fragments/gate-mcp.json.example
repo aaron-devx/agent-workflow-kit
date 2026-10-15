@@ -1,0 +1,12 @@
+{
+  "_comment": "Minimal Gate-MCP stub — merge into ~/.cursor/mcp.json. Set GATE_PROJECT_ROOT to the repo you have open in Cursor (not the gate-mcp source tree). Docs: https://github.com/Dukeabaddon/Gate-MCP",
+  "mcpServers": {
+    "gatemcp": {
+      "command": "node",
+      "args": ["/absolute/path/to/gate-mcp/dist/main.js"],
+      "env": {
+        "GATE_PROJECT_ROOT": "/absolute/path/to/your/open/project"
+      }
+    }
+  }
+}

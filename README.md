@@ -67,15 +67,17 @@ See [workflows/switch-agent.md](workflows/switch-agent.md).
 
 ## Token-efficient coding
 
-Recommended order: map → compress → read slices. Full playbook:
+Recommended order: **recover → map (graphify / dekko) → [Gate-MCP](https://github.com/Dukeabaddon/Gate-MCP) → Context Mode when needed** → read slices. Full playbook:
 
 **[workflows/token-efficient-context.md](workflows/token-efficient-context.md)**
 
-Optional stack (Graphify, Gate-MCP, context-mode) is documented there and in [docs/research-tool-map.md](docs/research-tool-map.md). MCP example fragments only — no secrets in this repo.
+**Dekko** (informal) = first-pass repo orientation via Graphify — wiki, `graphify query`, or path/explain — before multi-file Read/Grep.
+
+Optional stack is documented there and in [docs/research-tool-map.md](docs/research-tool-map.md). MCP example fragments under `mcp/fragments/` (`gate-mcp.json.example`, `context-mode.example.json`, `graphify-gate.example.json`) — no secrets in this repo.
 
 ## Optional: Caveman mode
 
-**Caveman** is an optional communication style for agents (shorter replies, same technical accuracy). It is **not** vendored in this kit. Install it as a separate Cursor skill (e.g. symlink or copy into `~/.cursor/skills/caveman`). Use `/caveman` or say “caveman mode” when you want it; say “normal mode” to turn it off.
+**Caveman** is optional — see **[workflows/optional-caveman.md](workflows/optional-caveman.md)**. Not vendored in this kit.
 
 ## Repo layout
 

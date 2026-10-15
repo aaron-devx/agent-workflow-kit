@@ -52,6 +52,24 @@ echo "Project: $PROJECT_ROOT"
 echo "Generated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 echo ""
 
+AGENTS_MAX=80
+if [[ -f "$PROJECT_ROOT/AGENTS.md" ]]; then
+  echo "=== AGENTS.md (header) ($PROJECT_ROOT/AGENTS.md) ==="
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "[dry-run] would print first $AGENTS_MAX lines"
+  else
+    head -n "$AGENTS_MAX" "$PROJECT_ROOT/AGENTS.md"
+    n=$(wc -l < "$PROJECT_ROOT/AGENTS.md" | tr -d ' ')
+    if [[ "$n" -gt "$AGENTS_MAX" ]]; then
+      echo "... (truncated at $AGENTS_MAX of $n lines — read full AGENTS.md in editor)"
+    fi
+  fi
+  echo ""
+else
+  echo "--- AGENTS.md: (missing — run init-project-context.sh) ---"
+  echo ""
+fi
+
 emit_file "$CTX/brief.md" "Brief"
 emit_file "$CTX/state.md" "State"
 if [[ -f "$CTX/handoff.md" ]]; then

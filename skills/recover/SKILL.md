@@ -11,13 +11,13 @@ New chat, new agent product, or user says "continue where we left off."
 
 ## Steps
 
-1. Read `AGENTS.md` if present.
-2. Run:
+1. Run (prints `AGENTS.md` header then `.context/`):
 
 ```bash
 ~/.agent-kit/scripts/recover.sh
 ```
 
+2. Read full `AGENTS.md` if the script truncated the header.
 3. Read full `.context/brief.md` if recover output truncated.
 4. Confirm **one** next action with user only if handoff is ambiguous.
 
