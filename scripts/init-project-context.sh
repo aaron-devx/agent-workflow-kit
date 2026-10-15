@@ -43,6 +43,21 @@ copy_if_missing() {
   fi
 }
 
+ensure_gitignore_line() {
+  local line="$1"
+  local gi="$PROJECT_ROOT/.gitignore"
+  if [[ -f "$gi" ]] && grep -qxF "$line" "$gi" 2>/dev/null; then
+    echo "gitignore ok: $line"
+    return 0
+  fi
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "[dry-run] would append to .gitignore: $line"
+    return 0
+  fi
+  echo "$line" >> "$gi"
+  echo "gitignore +: $line"
+}
+
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "[dry-run] init in $PROJECT_ROOT"
 else
@@ -54,6 +69,9 @@ for f in brief.md state.md handoff.md decisions.md rejected.md; do
 done
 
 copy_if_missing "$TEMPLATES/AGENTS.md" "$PROJECT_ROOT/AGENTS.md"
+
+ensure_gitignore_line ".context/"
+ensure_gitignore_line "brainstorms/"
 
 echo "Private context: $CONTEXT_DIR"
 echo "Next: edit .context/brief.md then scripts/handoff.sh before agent switch."

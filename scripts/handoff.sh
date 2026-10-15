@@ -35,7 +35,7 @@ BLOCK=$(cat <<EOF
 
 **Status:** ready for next agent
 
-**Message:** ${MESSAGE:-_(none — add with -m "..." )_}
+**Message:** ${MESSAGE:-No message — pass -m \"next step\"}
 
 **Pointers:**
 - Brief: \`.context/brief.md\`
