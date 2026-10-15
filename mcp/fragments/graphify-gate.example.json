@@ -1,0 +1,12 @@
+{
+  "_comment": "Example: Graphify CLI is not MCP; Gate-MCP wraps graphify map. Point GATE_PROJECT_ROOT at active repo.",
+  "mcpServers": {
+    "gatemcp": {
+      "command": "node",
+      "args": ["/path/to/gate-mcp/dist/index.js"],
+      "env": {
+        "GATE_PROJECT_ROOT": "/path/to/your/project"
+      }
+    }
+  }
+}

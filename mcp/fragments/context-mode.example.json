@@ -1,0 +1,10 @@
+{
+  "_comment": "Fragment for Cursor MCP config — merge into your mcp.json. No secrets.",
+  "mcpServers": {
+    "context-mode": {
+      "command": "npx",
+      "args": ["-y", "context-mode-mcp"],
+      "env": {}
+    }
+  }
+}
