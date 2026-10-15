@@ -17,9 +17,7 @@ Bootstrap a project:
 ```bash
 cd /path/to/your-repo
 ~/.agent-kit/scripts/init-project-context.sh
-# edit .context/brief.md
-echo ".context/" >> .gitignore
-echo "brainstorms/" >> .gitignore
+# edit .context/brief.md (init also appends .context/ and brainstorms/ to .gitignore)
 ```
 
 End a session / switch agent:
